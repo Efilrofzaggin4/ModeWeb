@@ -1,14 +1,4 @@
 {
-  "name": "modeweb",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.1.4",
@@ -17,6 +7,20 @@
     "express-session": "^1.17.3",
     "formidable": "^2.1.1",
     "mysql": "^2.18.1",
+    "node": "^20.2.0",
+    "nodemon": "^2.0.22",
+    "normalize.css": "^8.0.1",
     "uuid": "^9.0.0"
-  }
+  },
+  "name": "projet",
+  "version": "1.0.0",
+  "main": "appS.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
