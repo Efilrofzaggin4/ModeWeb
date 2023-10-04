@@ -11,9 +11,21 @@ import HomeController from "../controllers/HomeController.js"
 
 import AdminController from "../controllers/AdminController.js"
 
-//IMPORTATION DES ROUTES Visiteur
+import {DisplayCategory, DeleteCategory} from "../controllers/CategoryAdminController.js"
+import {CreateCategoryForm, CreateCategorySubmit} from "../controllers/CreateCategoryController.js"
+                    //IMPORTATION DES ROUTES Visiteur
+
 router.get('/', HomeController);
 
-//Importation des routes admin
+                    //IMPORTATION DES ROUTES ADMIN
 router.get('/admin', AdminController);
+
+router.get('/admin/category', DisplayCategory)
+router.delete('/admin/category/:id', DeleteCategory);
+
+router.get('/admin/category/create_category', CreateCategoryForm)
+router.post('/admin/category/create_category', CreateCategorySubmit)
+
+
+
 export default router;

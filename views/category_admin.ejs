@@ -1,0 +1,20 @@
+<section>
+    <h2>Category List</h2>
+
+    <a href="/admin/category/create_category">create category</a>
+    <ul>
+        <% if (category.length > 0) { %>
+            <% category.forEach((cat) => { %>
+                <div data-id="<%=cat.id%>">
+                    <li><%= cat.id %></li>
+                    <li><%= cat.name %></li>
+                    <a class="edit" href="/admin/category/edit_category/<%=cat.id%>">edit</a>
+                    <button class="js-remove-cat-button" data-id="<%=cat.id%>">supp</button>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <li>No category is aviable.</li>
+        <% } %>
+    </ul>
+</section>
+<script src="/js/index.js"></script>
