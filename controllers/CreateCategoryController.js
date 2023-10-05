@@ -44,11 +44,11 @@ export const CreateCategorySubmit = (req, res) => {
 
         const imagePath = files.image.filepath
 
-        console.log("imagePath"+imagePath)
+        // console.log("imagePath"+imagePath)
         const imageExtension = files.image.originalFilename.split(".").pop()
 
         const newImagePath = "public/images/category/"+files.image.newFilename+"."+imageExtension
-        console.log("newImagePath"+newImagePath)
+        // console.log("newImagePath"+newImagePath)
         
         if(!authorizedExtention.includes(files.image.mimetype)){
             return res.status(500).send("wrong extension for category image")

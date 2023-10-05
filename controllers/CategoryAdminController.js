@@ -60,3 +60,16 @@ export const DeleteCategory = (req, res) => {
         });
     });
 };
+
+export const EditCategory = (req, res) => {
+    
+	let id = req.params.id;
+
+	let sql = 'SELECT * FROM category WHERE id = ?';
+
+	pool.query(sql, [id], function (error, rows, fields) {
+		const category = rows;
+
+	        res.render('layout', {template :'editCategory',  category: rows[0] });
+	 });
+}

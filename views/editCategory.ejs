@@ -1,0 +1,19 @@
+<h2>Category Creation</h2>
+
+<form class="admin_form" action="/admin/category/editCategory/<%= category.id %>" enctype="multipart/form-data" method="post">
+
+	<p>
+		<label for="name">Category name</label>
+		<input type="text" name="name" required>
+	</p>
+	<p>
+		<label for="content">Category description</label>
+		<textarea name="content" rows="7" cols="40" required></textarea>
+	</p>
+    <p>
+        <label for="image">Category image</label>
+        <input type="file" name="image">
+    </p>
+	
+	<p><input type="submit" name="Enregistrer"></p>
+</form>
