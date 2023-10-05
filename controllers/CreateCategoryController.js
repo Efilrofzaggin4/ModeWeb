@@ -44,9 +44,11 @@ export const CreateCategorySubmit = (req, res) => {
 
         const imagePath = files.image.filepath
 
+        console.log("imagePath"+imagePath)
         const imageExtension = files.image.originalFilename.split(".").pop()
 
         const newImagePath = "public/images/category/"+files.image.newFilename+"."+imageExtension
+        console.log("newImagePath"+newImagePath)
         
         if(!authorizedExtention.includes(files.image.mimetype)){
             return res.status(500).send("wrong extension for category image")
@@ -62,7 +64,7 @@ export const CreateCategorySubmit = (req, res) => {
 
         const catId = uuidv4();
 
-        pool.query('INSERT INTO category (id, nom, content, image) VALUES (?, ?, ?, ?)', [catId, fields.name, fields.content, finalImagePath], (error, result) => {
+        pool.query('INSERT INTO category (id, name, content, image) VALUES (?, ?, ?, ?)', [catId, fields.name, fields.content, finalImagePath], (error, result) => {
         if (error) {
             console.log(error);
             return res.status(500).send("Error on category insertion");
