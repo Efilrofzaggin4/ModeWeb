@@ -1,0 +1,20 @@
+<section>
+    <h2>clothing List</h2>
+
+    <a href="/admin/clothing/create_clothing">create clothing</a>
+    <ul>
+        <% if (clothing.length > 0) { %>
+            <% clothing.forEach((clothe) => { %>
+                <div data-id="<%=clothe.id%>">
+                    <li><%= clothe.id %></li>
+                    <li><%= clothe.name %></li>
+                    <a class="edit" href="/admin/clothing/editCLothing/<%=clothe.id%>">edit</a>
+                    <button class="js-remove-clothe-button" data-id="<%=clothe.id%>">supp</button>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <li>No clothing is aviable.</li>
+        <% } %>
+    </ul>
+</section>
+<script src="/js/index.js"></script>

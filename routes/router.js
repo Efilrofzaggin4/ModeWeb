@@ -40,3 +40,4 @@ router.delete('/admin/clothing/:id', DeleteClothing);
 
 
 export default router;
+
