@@ -5,7 +5,7 @@ const router = express.Router();
                     //APPEL DES ROUTERS VISITEUR
 import {Register, RegisterSubmit} from "../controllers/RegisterController.js";
 import HomeController from "../controllers/HomeController.js";
-
+import {Login, LoginSubmit, Logout} from "../controllers/LoginController.js";
 
 
                     //APPEL DES ROUTERS ADMIN
@@ -22,6 +22,11 @@ router.get('/', HomeController);
 
 router.get('/register', Register)
 router.post('/register', RegisterSubmit)
+
+router.get('/login', Login)
+router.post('/login', LoginSubmit)
+
+router.get('/logout', Logout);
 
                     //IMPORTATION DES ROUTES ADMIN
 router.get('/admin', AdminController);
