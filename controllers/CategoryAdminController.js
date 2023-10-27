@@ -20,7 +20,7 @@ export const DisplayCategory =  (req, res) => {
 export const DeleteCategory = (req, res) => {
     let id = req.params.id;
 
-    // Récupérez d'abord le chemin de l'image associée à la catégorie que vous supprimez
+    
     pool.query('SELECT image FROM category WHERE id = ?', [id], (error, result) => {
         if (error) {
             console.log(error);
@@ -37,7 +37,7 @@ export const DeleteCategory = (req, res) => {
 
         const imagePath = "../ModeWeb/public/"+result[0].image;
         console.log(imagePath)
-        // Maintenant, supprimez le fichier image du système de fichiers
+        
         fs.unlink(imagePath, (unlinkError) => {
             if (unlinkError) {
                 console.error(unlinkError);
@@ -46,7 +46,7 @@ export const DeleteCategory = (req, res) => {
                 });
             }
 
-            // Après avoir supprimé le fichier image, supprimez la catégorie de la base de données
+            
             pool.query('DELETE FROM category WHERE id = ?', [id], (deleteError) => {
                 if (deleteError) {
                     console.log(deleteError);
@@ -125,24 +125,24 @@ export const EditCategorySubmit = (req, res) => {
 
         const catId = req.params.id;
         
-        // Récupérer l'emplacement de l'ancienne image depuis la base de données
+        
         pool.query('SELECT image FROM category WHERE id = ?', [catId], function (error, results, fields) {
             if (error) {
                 console.log(error);
                 return res.status(500).send("Erreur lors de la récupération de l'emplacement de l'ancienne image");
             }
 
-            // Stocker l'emplacement de l'ancienne image
+            
             const oldImagePath = "../ModeWeb/public/"+results[0].image;
 
-            // Supprimer l'ancienne image
+            
             fs.unlink(oldImagePath, (err) => {
                 if (err) {
                     console.log(err);
                 }
             });
 
-            // Mettre à jour la catégorie avec la nouvelle image
+            
             const updateCat = {
                 name: editCat.name,
                 content: editCat.content,

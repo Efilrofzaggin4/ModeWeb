@@ -32,7 +32,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 
 
-// app.use(express.static("public"));
+
 
 app.use(function (req, res, next) {
     res.locals.isUser = req.session.role === 'user';
