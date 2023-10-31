@@ -16,6 +16,7 @@ import {DisplayCategory, DeleteCategory, EditCategory, EditCategorySubmit} from 
 import {CreateCategoryForm, CreateCategorySubmit} from "../controllers/CreateCategoryController.js"
 
 import {DisplayClothing, DeleteClothing} from "../controllers/ClothingAdminController.js";
+import { CreateClothingForm, CreateCLothingSubmit} from "../controllers/CreateClothingController.js";
                     //IMPORTATION DES ROUTES Visiteur
 
 router.get('/', HomeController);
@@ -33,15 +34,18 @@ router.get('/admin', AdminController);
 
 //category gestion
 router.get('/admin/category', DisplayCategory)
-router.delete('/admin/category/:id', DeleteCategory);
-router.get('/admin/category/editCategory/:id', EditCategory);
-router.post('/admin/category/editCategory/:id', EditCategorySubmit)
+router.delete('/admin/category/:category_id', DeleteCategory);
+router.get('/admin/category/editCategory/:category_id', EditCategory);
+router.post('/admin/category/editCategory/:category_id', EditCategorySubmit)
 router.get('/admin/category/create_category', CreateCategoryForm)
 router.post('/admin/category/create_category', CreateCategorySubmit)
 
 //clothing gestion
 router.get('/admin/clothing', DisplayClothing)
 router.delete('/admin/clothing/:id', DeleteClothing);
+router.get('/admin/clothing/createClothing', CreateClothingForm)
+router.get('/admin/clothing/createClothing', CreateCLothingSubmit)
+//IMPORTATION DES ROUTES Visiteur)
 
 
 export default router;

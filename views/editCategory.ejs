@@ -1,18 +1,18 @@
 <h2>Category Modification</h2>
 
-<form class="admin_form" action="/admin/category/editCategory/<%= category.id %>" enctype="multipart/form-data" method="post">
-	<input type="hidden" name="id" value="<%= category.id %>" />
+<form class="admin_form" action="/admin/category/editCategory/<%= category.category_id %>" enctype="multipart/form-data" method="post">
+	<input type="hidden" name="category_id" value="<%= category.category_id %>" />
 	<p>
-		<label for="name">Category name</label>
-		<input id="name" type="text" name="name" required>
+		<label for="category_name">Category name</label>
+		<input id="category_name" type="text" name="category_name" required>
 	</p>
 	<p>
-		<label for="content">Category description</label>
-		<textarea id="content" name="content" rows="7" cols="40" required></textarea>
+		<label for="category_content">Category description</label>
+		<textarea id="category_content" name="category_content" rows="7" cols="40" required></textarea>
 	</p>
     <p>
-        <label for="image">Category image</label>
-        <input id="image" type="file" name="image">
+        <label for="category_image">Category image</label>
+        <input id="category_image" type="file" name="category_image">
     </p>
 	
 	<p><input type="submit" name="Enregistrer"></p>

@@ -1,0 +1,27 @@
+-- controller de creation de vetement--
+
+SELECT clothing.id, clothing.name, clothing_category.clothing_id, category.id, category.name
+FROM clothing
+INNER JOIN clothing_category ON clothing_category.clothing_id = clothing.id
+INNER JOIN category ON category.id = clothing_category.category_id
+
+
+SELECT
+    c.id AS clothing_id,
+    c.name AS clothing_name,
+    c.price AS clothing_price,
+    c.image1 AS clothing_image1,
+    c.image2 AS clothing_image2,
+    c.image3 AS clothing_image3,
+    c.image4 AS clothing_image4,
+    c.sex AS clothing_sex,
+    c.collection AS clothing_collection,
+    cc.clothing_id AS clothing_category_clothing_id,
+    cc.category_id AS clothing_category_category_id,
+    cat.id AS category_id,
+    cat.name AS category_name,
+    cat.image AS category_image,
+    cat.content AS category_content
+FROM clothing AS c
+INNER JOIN clothing_category AS cc ON cc.clothing_id = c.id
+INNER JOIN category AS cat ON cat.id = cc.category_id

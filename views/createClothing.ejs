@@ -1,0 +1,48 @@
+<h2>Clothing Creation</h2>
+
+
+<form action="/admin/clothing/createClothingSubmit" method="post" enctype="multipart/form-data">
+    <p></p>
+    <label for="name">Name : </label>
+    <input type="text" name="name" id="name" required>
+
+    <p></p>
+    <label for="price">Price</label>
+    <input type="text" name="price" id="price" required>
+    <p></p>
+    <label for="sex">Sexe :</label>
+    <select name="sex" id="sex" required>
+        <option value="women">Women</option>
+        <option value="men">Men</option>
+        <option value="girl">Girl</option>
+        <option value="boy">Boy</option>
+    </select>
+    
+    <p></p>
+    <label for="collection">Collection :</label>
+    <input type="text" name="collection" id="collection" required>
+
+    <p></p>
+    <label for="category">Catégories :</label>
+    <select name="category" id="category" multiple>
+        
+        <% category.forEach(cat => { %>
+            <option value="<%= cat.id %>"><%= cat.name %></option>
+        <% }); %>
+    </select>
+    
+    <p></p>
+    <label for="image1">Image 1 :</label>
+    <input type="file" name="image1" id="image1" accept="image/jpeg, image/png" required>
+
+    <label for="image2">Image 2 :</label>
+    <input type="file" name="image2" id="image2" accept="image/jpeg, image/png" required>
+
+    <label for="image3">Image 3 :</label>
+    <input type="file" name="image3" id="image3" accept="image/jpeg, image/png" required>
+
+    <label for="image4">Image 4 :</label>
+    <input type="file" name="image4" id="image4" accept="image/jpeg, image/png" required>
+
+    <button type="submit">Créer le vêtement</button>
+</form>

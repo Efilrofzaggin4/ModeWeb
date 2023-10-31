@@ -64,7 +64,7 @@ export const CreateCategorySubmit = (req, res) => {
 
         const catId = uuidv4();
 
-        pool.query('INSERT INTO category (id, name, content, image) VALUES (?, ?, ?, ?)', [catId, fields.name, fields.content, finalImagePath], (error, result) => {
+        pool.query('INSERT INTO category (category_id, category_name, category_content, category_image) VALUES (?, ?, ?, ?)', [catId, fields.name, fields.content, finalImagePath], (error, result) => {
         if (error) {
             console.log(error);
             return res.status(500).send("Error on category insertion");
