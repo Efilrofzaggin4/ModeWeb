@@ -3,8 +3,10 @@ import fs from "fs"
 import formidable from "formidable"
 
 
+
+
 export const DisplayClothing =  (req, res) => {
-    let sql = 'SELECT * FROM clothing ORDER BY name'
+    let sql = 'SELECT * FROM clothing ORDER BY clothing_name'
 
     pool.query(sql, function(error, clothing){
         if(error){

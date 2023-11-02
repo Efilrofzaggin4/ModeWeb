@@ -42,9 +42,9 @@ router.post('/admin/category/create_category', CreateCategorySubmit)
 
 //clothing gestion
 router.get('/admin/clothing', DisplayClothing)
-router.delete('/admin/clothing/:id', DeleteClothing);
+router.delete('/admin/clothing/:clothing_id', DeleteClothing);
 router.get('/admin/clothing/createClothing', CreateClothingForm)
-router.get('/admin/clothing/createClothing', CreateCLothingSubmit)
+router.post('/admin/clothing/createClothing', CreateCLothingSubmit)
 //IMPORTATION DES ROUTES Visiteur)
 
 

@@ -5,11 +5,11 @@
     <ul>
         <% if (clothing.length > 0) { %>
             <% clothing.forEach((clothe) => { %>
-                <div data-id="<%=clothe.id%>">
-                    <li><%= clothe.id %></li>
-                    <li><%= clothe.name %></li>
-                    <a class="edit" href="/admin/clothing/editCLothing/<%=clothe.id%>">edit</a>
-                    <button class="js-remove-clothe-button" data-id="<%=clothe.id%>">supp</button>
+                <div data-id="<%=clothe.clothing_id%>">
+                    <li><%= clothe.clothing_id %></li>
+                    <li><%= clothe.clothing_name %></li>
+                    <a class="edit" href="/admin/clothing/editCLothing/<%=clothe.clothing_id%>">edit</a>
+                    <button class="js-remove-clothe-button" data-id="<%=clothe.clothing_id%>">supp</button>
                 </div>
             <% }); %>
         <% } else { %>
