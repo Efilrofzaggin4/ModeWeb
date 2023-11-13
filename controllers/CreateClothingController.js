@@ -89,7 +89,7 @@ export const CreateCLothingSubmit = (req, res) => {
             !authorizedExtention.includes(files.image2.mimetype) ||
             !authorizedExtention.includes(files.image3.mimetype) ||
             !authorizedExtention.includes(files.image4.mimetype)) {
-            return res.status(500).send("Extension incorrecte pour une ou plusieurs images");
+            return res.status(500).send("wrong extension");
         }
 
         // image final path

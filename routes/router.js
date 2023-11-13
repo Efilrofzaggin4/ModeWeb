@@ -17,6 +17,8 @@ import {CreateCategoryForm, CreateCategorySubmit} from "../controllers/CreateCat
 
 import {DisplayClothing, DeleteClothing} from "../controllers/ClothingAdminController.js";
 import { CreateClothingForm, CreateCLothingSubmit} from "../controllers/CreateClothingController.js";
+
+import { CreatePerfumeForm, CreatePerfumeSubmit } from "../controllers/CreatePerfumeController.js";
                     //IMPORTATION DES ROUTES Visiteur
 
 router.get('/', HomeController);
@@ -43,8 +45,13 @@ router.post('/admin/category/create_category', CreateCategorySubmit)
 //clothing gestion
 router.get('/admin/clothing', DisplayClothing)
 router.delete('/admin/clothing/:clothing_id', DeleteClothing);
-router.get('/admin/clothing/createClothing', CreateClothingForm)
-router.post('/admin/clothing/createClothing', CreateCLothingSubmit)
+router.get('/admin/clothing/createClothing', CreateClothingForm);
+router.post('/admin/clothing/createClothing', CreateCLothingSubmit);
+//edit à faaire !!!!!
+
+router.get('/admin/perfume/createPerfume', CreatePerfumeForm);
+
+
 //IMPORTATION DES ROUTES Visiteur)
 
 
